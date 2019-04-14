@@ -1,7 +1,29 @@
 # devops_packer
 Repository for AMI creation by using packer tool
 
-## Variables
+Build the docker image
+
+    docker build -t chef/chefdk:v1 .
+
+Run the docker container
+
+    docker run -i -d -v ~/Documents/workstation/:/var/chef/packer chef/chefdk:v1
+
+Login to container in interactive mode
+
+    docker exec -it <container_id> "/bin/bash"
+                    or
+    docker exec -it $(docker ps | grep chef/chefdk:v1 | awk '{print $1}') "/bin/bash"
+
+Setup the AWS profile
+
+    aws configure
+    AWS Access Key ID [None]: *********
+    AWS Secret Access Key [None]: **********
+    Default region name [None]:
+    Default output format [Noµne]:
+    Run the chef recipe
+
 Variable for packer build need to pass via a variable file as below
 
     packer build --var-file=variables.json
