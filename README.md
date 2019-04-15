@@ -7,7 +7,7 @@ Build the docker image
 
 Run the docker container
 
-    docker run -i -d -v ~/Documents/workstation/:/var/chef/packer packer:latest
+    docker run -i -d -v ~/Documents/workstation/:/mnt/packer packer:latest
 
 Login to container in interactive mode
 
