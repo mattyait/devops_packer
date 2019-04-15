@@ -26,7 +26,7 @@ Setup the AWS profile
 
 Variable for packer build need to pass via a variable file as below
 
-    packer build --var-file=variables.json
+    packer build --var-file packer/variables.json packer/ami.json
 
 Sample variable file could be as below
 
